@@ -1,0 +1,22 @@
+.current_task {
+    font-weight: bolder;
+    color: #336600;
+}
+
+.task_hook {
+    color: #336699;
+}
+
+.no_center {
+    text-align: left;
+    font-family: monospace;
+}
+
+.pre {
+    white-space: pre;
+}
+
+.command {
+    color: #000000;
+    font-size: 36px;
+}

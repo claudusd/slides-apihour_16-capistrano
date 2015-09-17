@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">    
+    <head>
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/black.min.css">
+        <link rel="stylesheet" href="css/zenburn.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Capistrano 3<h1>
+                    <h4>Le déploiement "Finger in the nose"</h4>
+                </section>
+                <section>
+                    <section>
+                        <ul>
+                            <li>Ruby</li>
+                            <li class="fragment">SSH</li>
+                            <li class="fragment">Documentation</li>
+                            <li class="fragment">Nombreux plugin</li>
+                            <li class="fragment">Git</li>
+                        </ul>    
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Client</h3>
+                        <div class="no_center">
+                            <div>├── Capfile</div>
+                            <div>├── config</div>
+                            <div class="pre">│     <span>├──  deploy </span></div>
+                            <div class="pre">│     <span>│      ├──  prod.rb </span></div>
+                            <div class="pre">│     <span>│      ├──  preprod.rb </span></div>
+                            <div class="pre">│     <span>├──  deploy.rb </span></div>
+                            <div>├── lib</div>
+                            <div class="pre">       <span>├──  capistrano </span></div>
+                            <div class="pre">               <span>├──  tasks </span></div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Serveur</h3>
+                        <div data-fragment-index="7" class="no_center">
+                            <div data-fragment-index="6">├── repo</div>
+                            <div>├──<span class="fragment" data-fragment-index="2"> releases</span></div>
+                            <div class="pre">│    <span class="fragment" data-fragment-index="3">├──  Release 1 </span></div>
+                            <div class="pre">│    <span class="fragment" data-fragment-index="4">├──  Release 2 </span></div>
+                            <div class="pre">│    <span class="fragment" data-fragment-index="5">├──  Release x</span><span class="fragment" data-fragment-index="7">  ──┐</span></div>
+                            <div>├──<span class="fragment" data-fragment-index="6"> current</span><span class="fragment" data-fragment-index="7"> ────────┘</span></div>
+                       </div>
+                    </section>
+                </section>
+                <section>
+
+                </section>
+                <section>
+                    <section>
+                        <h3>Workflow</h3>
+                        <ul data-fragment-index="5">
+                            <li class="current_task" data-fragment-index="1">deploy:starting</li>
+                            <li class="fragment task_hook" data-fragment-index="5">deploy:started</li>
+                            <li class="fragment current_task" data-fragment-index="2">deploy:updating</li>
+                            <li class="fragment task_hook" data-fragment-index="5">deploy:updated</li>
+                            <li class="fragment current_task" data-fragment-index="3">deploy:publishing</li>
+                            <li class="fragment task_hook" data-fragment-index="5">deploy:published</li>
+                            <li class="fragment current_task" data-fragment-index="4">deploy:finishing</li>
+                            <li class="fragment task_hook" data-fragment-index="5">deploy:finished</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section class="present" data-background="giphy.gif" data-background-image="giphy.gif">
+                        <h1>cap prod deploy</h1> 
+                    </section>
+                    <section>
+                        <h1>Merci !</h1>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'slide',
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'concave',
+                dependencies: [
+                    {
+                        src: 'js/highlight.min.js',
+                        async: true,
+                        callback: function() { hljs.initHighlightingOnLoad(); }
+                    }
+                ]
+            });
+        </script>
+    </body>
+</html>
